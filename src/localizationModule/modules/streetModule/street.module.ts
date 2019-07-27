@@ -1,17 +1,17 @@
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { Module } from "@nestjs/common";
 import { Street } from "./street.entity";
-import { StreetService } from "src/localizationModule/streetModule/street.service";
 import { StreetController } from "./street.controller";
+import { StreetService } from "./street.service";
 
 
 
 @Module({
     imports: [
-      TypeOrmModule.forFeature([Street]),
+        TypeOrmModule.forFeature([Street]),
     ],
-    controllers:[StreetController],
-    providers:[StreetService]
-  })
-  
+    controllers: [StreetController],
+    providers: [StreetService]
+})
+
 export class StreetModule { }
