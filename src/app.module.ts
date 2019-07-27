@@ -11,7 +11,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       host: 'den1.mysql3.gear.host',
       port: 3306,
       username: 'addressdb',
-      password: 'Wj6S!oaSzb~d',
+      password: '**********',
       database: 'addressdb',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
     }),
