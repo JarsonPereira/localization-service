@@ -4,8 +4,6 @@ import { Street } from "./street.entity";
 import { StreetController } from "./street.controller";
 import { StreetService } from "./street.service";
 
-
-
 @Module({
     imports: [
         TypeOrmModule.forFeature([Street]),
@@ -14,4 +12,4 @@ import { StreetService } from "./street.service";
     providers: [StreetService]
 })
 
-export class StreetModule { }
+export class StreetModule { }     
