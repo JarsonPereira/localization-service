@@ -1,19 +1,23 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Localization } from "../shared/location.shared";
 
 @Entity()
-export class State {
+export class State extends Localization {
+    
     constructor(
-        public _name: string,
-        public _initials: string,
+        _name: string,
+        _initials: string,
 
     ) {
 
+        super();
         this.name = _name;
         this.initials = _initials;
+
     }
 
     @PrimaryGeneratedColumn()
-    public id: string;
+    public id: number;
 
     @Column('varchar')
     public name: string;
@@ -21,14 +25,6 @@ export class State {
     @Column('varchar')
     public initials: string;
 
-    @Column('varchar')
-    public createdAt: string;
-
-    @Column('varchar')
-    public updateAt: string;
-
-    @Column('varchar')
-    public deleteAt: string;
 
 }
 

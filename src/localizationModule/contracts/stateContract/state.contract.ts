@@ -1,15 +1,15 @@
-import { Contract } from "./constract";
+import { Contract } from "../constract";
 import { Injectable } from "@nestjs/common";
-import { Flunt } from "../../utils/Flunt";
-import { State } from "../domain/state.entity";
+import { Flunt } from "../../../utils/Flunt";
+import { State } from "../../domain/state.entity";
 import { CreateConfigItemOptions } from "@babel/core";
-import { CreateStateInput } from "../commands/inputs/createdState.input";
+import { RegisterStateInput } from "../../commands/inputs/state/registerState.input";
 
 @Injectable()
 export class StateContract implements Contract {
     errors: any;
 
-    validate(model: CreateStateInput): boolean {
+    validate(model: RegisterStateInput): boolean {
         const flunt = new Flunt();
 
         flunt.isRequired(model.name,  "Informe o estado.");

@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { LocalizationModule } from './localizationContext/localization.module';
+import { LocalizationModule } from './localizationModule/localization.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 
@@ -19,4 +19,4 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule { }
