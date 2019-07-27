@@ -1,4 +1,4 @@
-import { District } from "src/localizationModule/domain/district.entity";
+import { District } from "src/localizationModule/modules/districtModule/district.entity";
 
 export class RegisterStreetInput {
 
@@ -14,5 +14,5 @@ export class RegisterStreetInput {
 
     public reference: string;
 
-    public district: District;
+    public idDistrict: number;
 }

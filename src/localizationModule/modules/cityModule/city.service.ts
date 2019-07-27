@@ -1,4 +1,4 @@
-import { City } from "../domain/city.entity";
+import { City } from "./city.entity";
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";

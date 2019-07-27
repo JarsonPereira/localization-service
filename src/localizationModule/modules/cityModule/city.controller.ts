@@ -1,11 +1,10 @@
 import { Controller, HttpException, HttpStatus, Get, Post, Body, UseInterceptors, Put, Param, Delete } from "@nestjs/common";
-import { CityService } from "../services/city.service";
-import { Result } from "../commands/outputs/result.output";
-import { RegisterCityInput } from "../commands/inputs/city/registerCity.input";
-import { City } from "../domain/city.entity";
-import { ValidatorInterceptor } from "../interceptors/validator.interceptor";
-import { CityContract } from "../contracts/cityContract/city.contract";
-import { async } from "rxjs/internal/scheduler/async";
+import { CityService } from "./city.service";
+import { Result } from "../../commands/outputs/result.output";
+import { RegisterCityInput } from "../../commands/inputs/city/registerCity.input";
+import { City } from "./city.entity";
+import { ValidatorInterceptor } from "../../interceptors/validator.interceptor";
+import { CityContract } from "../../contracts/cityContract/city.contract";
 
 
 @Controller('api/cities')
@@ -38,7 +37,7 @@ export class CityController {
     @UseInterceptors(new ValidatorInterceptor(new CityContract()))
     async create(@Body() body: RegisterCityInput) {
         try {
-            let city = new City(body.name, body.reference, body.state, body.districts);
+            let city = new City(body.name, body.reference, body.idState, body.districts);
             await this.cityService.post(city);
             return new Result(true, 'Inserido com sucesso.', body.name, null);
         } catch{
@@ -51,7 +50,7 @@ export class CityController {
     async put(@Param('id') identifier: number, @Body() body: RegisterCityInput) {
         console.log('1');
         try {
-            let city = new City(body.name, body.reference, body.state, body.districts);
+            let city = new City(body.name, body.reference, body.idState, body.districts);
             await this.cityService.put(identifier, city);
             return new Result(true, 'Atualizado com sucesso', body.name, null);
         } catch{
@@ -69,6 +68,4 @@ export class CityController {
             throw new HttpException(new Result(false, '', {}, []), HttpStatus.BAD_REQUEST);
         }
     }
-
-
 }

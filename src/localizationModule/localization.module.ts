@@ -1,19 +1,16 @@
 import { Module } from '@nestjs/common';
-import { StateController } from './controllers/state.controller';
-import { StateService } from './services/state.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { State } from './domain/state.entity';
-import { City } from './domain/city.entity';
-import { Street } from './domain/street.entity';
-import { District } from './domain/district.entity';
+import { DistrictModule } from './modules/districtModule/district.module';
+import { StateModule } from './modules/stateModule/state.module';
+import { CityModule } from './modules/cityModule/city.module';
+import { StreetModule } from './modules/streetModule/street.module';
 
-
+// Modulo de informações sobre localização
 @Module({
   imports: [
-    TypeOrmModule.forFeature([State,City,Street,District]),
+    DistrictModule,StateModule,CityModule,StreetModule,
   ],
-  controllers: [StateController],
-  providers: [StateService],
+  controllers: [],
+  providers: [],
 })
 
-export class LocalizationModule {}
+export class LocalizationModule { }

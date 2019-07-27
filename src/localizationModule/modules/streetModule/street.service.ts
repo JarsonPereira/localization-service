@@ -1,4 +1,4 @@
-import { Street } from "../domain/street.entity";
+import { Street } from "./street.entity";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Injectable } from "@nestjs/common";
 import { Repository } from "typeorm";
@@ -13,6 +13,11 @@ export class StreetService {
     async get(): Promise<Street[]> {
 
         return await this.repository.find();
+    }
+
+    async getById(id: number): Promise<Street> {
+
+        return await this.repository.findOne(id);
     }
 
     async post(street: Street) {

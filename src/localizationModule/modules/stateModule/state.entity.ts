@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
-import { Localization } from "../shared/location.shared";
+import { Localization } from "../../shared/location.shared";
 
 @Entity()
 export class State extends Localization {

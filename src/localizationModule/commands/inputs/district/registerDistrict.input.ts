@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne } from "typeorm";
-import { Street } from "src/localizationModule/domain/street.entity";
+import { Street } from "src/localizationModule/modules/streetModule/street.entity";
 
 
 export class RegisterDistrictInput {
@@ -7,6 +7,8 @@ export class RegisterDistrictInput {
     public name: string;
 
     public reference: string;
+
+    public idCity: number;
 
     public streets: Street[];
 }

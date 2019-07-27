@@ -1,11 +1,11 @@
 import { Controller, Post, Get, Put, Body, UseInterceptors, HttpException, HttpStatus, Param, Delete } from "@nestjs/common";
-import { StateService } from "../services/state.service";
+import { StateService } from "./state.service";
 import { create } from "domain";
-import { RegisterStateInput } from "../commands/inputs/state/registerState.input";
-import { State } from "../domain/state.entity";
-import { Result } from "../commands/outputs/result.output";
-import { ValidatorInterceptor } from "../interceptors/validator.interceptor";
-import { StateContract } from "../contracts/stateContract/state.contract";
+import { RegisterStateInput } from "../../commands/inputs/state/registerState.input";
+import { State } from "./state.entity";
+import { Result } from "../../commands/outputs/result.output";
+import { ValidatorInterceptor } from "../../interceptors/validator.interceptor";
+import { StateContract } from "../../contracts/stateContract/state.contract";
 import { identifier } from "@babel/types";
 
 @Controller('api/states')

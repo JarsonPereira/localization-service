@@ -18,8 +18,7 @@ export class StreetContract implements Contract {
         flunt.isRequired(model.postalCode, "Informe a codigo postal.");
         flunt.isFixedLen(model.postalCode, 8, "O codigo postal precisa ter 8 caracteres. ");
         flunt.isRequired(model.reference, "Informe a referência.");
-        flunt.hasMinLen(model.district.streets.length,1, "Informe pelo menos uma rua.");
-        flunt.isRequired(model.district, "Informe os dados do distrito.");
+        flunt.hasMinLen(model.idDistrict,1, "Informe o identificador  do distrito.");
         
         this.errors = flunt.errors;
         return flunt.valid();

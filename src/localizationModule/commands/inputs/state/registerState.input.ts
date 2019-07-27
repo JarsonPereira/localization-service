@@ -1,4 +1,4 @@
-import { State } from "src/localizationModule/domain/state.entity";
+import { State } from "src/localizationModule/modules/stateModule/state.entity";
 
 export class RegisterStateInput {
 

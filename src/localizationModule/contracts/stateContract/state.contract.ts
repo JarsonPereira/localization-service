@@ -1,7 +1,7 @@
 import { Contract } from "../constract";
 import { Injectable } from "@nestjs/common";
 import { Flunt } from "../../../utils/Flunt";
-import { State } from "../../domain/state.entity";
+import { State } from "../../modules/stateModule/state.entity";
 import { CreateConfigItemOptions } from "@babel/core";
 import { RegisterStateInput } from "../../commands/inputs/state/registerState.input";
 
