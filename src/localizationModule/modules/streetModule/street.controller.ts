@@ -34,7 +34,7 @@ export class StreetController {
 
     @Post()
     @UseInterceptors(new ValidatorInterceptor(new StreetContract()))
-    async create(@Body() body: RegisterStreetInput) {
+    async add(@Body() body: RegisterStreetInput) {
         try {
             let street = new Street(body.name, body.postalCode, body.description,
                 body.latitude, body.longitude, body.reference, body.idDistrict);
@@ -48,7 +48,7 @@ export class StreetController {
 
     @Put(':id')
     @UseInterceptors(new ValidatorInterceptor(new StreetContract()))
-    async put(@Param('id') identifier: number, @Body() body: RegisterStreetInput) {
+    async edit(@Param('id') identifier: number, @Body() body: RegisterStreetInput) {
 
         try {
             let street = new Street(body.name, body.postalCode, body.description,

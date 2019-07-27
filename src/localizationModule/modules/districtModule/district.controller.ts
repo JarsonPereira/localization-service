@@ -37,7 +37,7 @@ export class DistrictController {
 
     @Post()
     @UseInterceptors(new ValidatorInterceptor(new DistrictContract()))
-    async create(@Body() body: RegisterDistrictInput) {
+    async add(@Body() body: RegisterDistrictInput) {
         try {
             let district = new District(body.name, body.reference, body.idCity);
 
@@ -50,7 +50,7 @@ export class DistrictController {
 
     @Put(':id')
     @UseInterceptors(new ValidatorInterceptor(new DistrictContract()))
-    async put(@Param('id') identifier: number, @Body() body: RegisterDistrictInput) {
+    async edit(@Param('id') identifier: number, @Body() body: RegisterDistrictInput) {
 
         try {
             let district = new District(body.name, body.reference, body.idCity);

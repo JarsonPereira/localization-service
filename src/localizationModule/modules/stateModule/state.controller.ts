@@ -37,7 +37,7 @@ export class StateController {
 
     @Post()
     @UseInterceptors(new ValidatorInterceptor(new StateContract()))
-    async create(@Body() body: RegisterStateInput) {
+    async add(@Body() body: RegisterStateInput) {
         try {
             let state = new State(body.name, body.initials);
             await this.stateService.post(state);
@@ -51,7 +51,7 @@ export class StateController {
 
     @Put(':id')
     @UseInterceptors(new ValidatorInterceptor(new StateContract()))
-    async put(@Param('id') identifier: number, @Body() body: RegisterStateInput) {
+    async edit(@Param('id') identifier: number, @Body() body: RegisterStateInput) {
         console.log('1');
         try {
             let state = new State(body.name, body.initials);

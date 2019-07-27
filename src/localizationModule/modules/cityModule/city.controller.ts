@@ -35,7 +35,7 @@ export class CityController {
 
     @Post()
     @UseInterceptors(new ValidatorInterceptor(new CityContract()))
-    async create(@Body() body: RegisterCityInput) {
+    async add(@Body() body: RegisterCityInput) {
         try {
             let city = new City(body.name, body.reference, body.idState, body.districts);
             await this.cityService.post(city);
@@ -47,7 +47,7 @@ export class CityController {
 
     @Put(':id')
     @UseInterceptors(new ValidatorInterceptor(new CityContract()))
-    async put(@Param('id') identifier: number, @Body() body: RegisterCityInput) {
+    async edit(@Param('id') identifier: number, @Body() body: RegisterCityInput) {
         console.log('1');
         try {
             let city = new City(body.name, body.reference, body.idState, body.districts);
